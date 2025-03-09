@@ -4,6 +4,9 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Options
+local opts = { noremap = true, silent = true }
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -103,8 +106,12 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Resize splits
-vim.keymap.set("n", "<C-S-j>", ":resize -2<CR>")
-vim.keymap.set("n", "<C-S-k>", ":resize +2<CR>")
-vim.keymap.set("n", "<C-S-h>", ":vertical resize -2<CR>")
-vim.keymap.set("n", "<C-S-l>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "<C-S-j>", ":resize -2<CR>", opts)
+vim.keymap.set("n", "<C-S-k>", ":resize +2<CR>", opts)
+vim.keymap.set("n", "<C-S-h>", ":vertical resize -2<CR>", opts)
+vim.keymap.set("n", "<C-S-l>", ":vertical resize +2<CR>", opts)
+
+-- Switch buffers with Shift + l/h
+vim.keymap.set("n", "<S-l>", ":bnext<CR>", opts)
+vim.keymap.set("n", "<S-h>", ":bprev<CR>", opts)
 
